@@ -8,7 +8,7 @@ def Download(yt):
     yt.set_filename(yt.title)  
     d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)  
     try:
-        yt.download(DOWNLOAD_PATH)
+        d_video.download(DOWNLOAD_PATH)
         st.success('Download started check your folder', icon="✅")
         
     except:
