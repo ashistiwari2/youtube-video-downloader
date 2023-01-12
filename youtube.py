@@ -37,7 +37,7 @@ if y==1:
         col1, col2 = st.columns(2)
         sleep(8)
         with col1:
-            st.image(value, caption=yt.title, width=200, channels="RGB", output_format="auto")
+            st.image(imgUrl, caption=yt.title, width=200, channels="RGB", output_format="auto")
             st.write("Title :{}".format(yt.title))
             st.write("Views :{}".format(yt.views))
             st.write("Duration:{}".format(yt.length))
