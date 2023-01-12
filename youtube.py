@@ -2,9 +2,21 @@ from pytube import YouTube
 import streamlit as st
 from time import sleep
 y=0
+def Download(link):
+    youtubeObject = YouTube(link)
+    youtubeObject = youtubeObject.streams.get_highest_resolution()
+    try:
+        youtubeObject.download()
+        st.success('Download started check your folder', icon="✅")
+        
+    except:
+        st.warning("--Error has occured--")
+        
+
 
 with st.form(key='youtube', clear_on_submit=True):
     link = st.text_area("Enter Youtube video link:", key='user')
+    link1=link
     submit_text = st.form_submit_button(label='Submit')
 if submit_text:
     try:
@@ -46,15 +58,15 @@ if y==1:
      
     download = st.radio(
     "Do you want to download the video",
-    ('Yes','No','rerun the app'))
+    ('No','Yes','rerun the app'))
     if download =='Yes':
-        stream = yt.streams.get_highest_resolution()
-        stream.download()
-        st.success('Download started check your folder', icon="✅")
+        download(link1)
+        
     elif download =='rerun the app':
         st.experimental_rerun()
-    else:
-        st.success("           ")
+    elif download=='N0:
+        st.success("          ")
+
         
 
 
