@@ -3,9 +3,12 @@ import streamlit as st
 from time import sleep
 y=0
 def Download(yt):
-    yt = yt.streams.get_highest_resolution()
+    DOWNLOAD_PATH = " C:/Users/" 
+    mp4files = yt.streams.filter('mp4')  
+    yt.set_filename(yt.title)  
+    d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)  
     try:
-        yt.download()
+        yt.download(DOWNLOAD_PATH)
         st.success('Download started check your folder', icon="✅")
         
     except:
