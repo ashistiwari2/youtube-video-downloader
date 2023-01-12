@@ -30,7 +30,8 @@ if submit_text:
 if y==1:
 #     video = pafy.new(link)
 #     value = video.thumb
-    imgUrl = f"http://i.ytimg.com/vi/{link[link.find('='):]}/maxresdefault.jpg"
+    link2=link.split('=')
+    imgUrl = f"http://i.ytimg.com/vi/{link2[2]}/maxresdefault.jpg"
     st.write(imgUrl)
 #     st.write(value)
     with st.spinner(f'Searching video on youtube for {link}.....'):
