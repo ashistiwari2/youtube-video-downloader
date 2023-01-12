@@ -61,10 +61,13 @@ if y==1:
     if download =='Yes':
         Download(yt)
         
-    elif download =='rerun the app':
-        st.experimental_rerun()
+    
     elif download=='No':
         st.write("You have selected no")
+        
+    elif download =='rerun the app':
+        st.experimental_rerun()
+    
 
         
 
