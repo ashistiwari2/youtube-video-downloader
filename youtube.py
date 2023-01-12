@@ -31,7 +31,7 @@ if y==1:
 #     video = pafy.new(link)
 #     value = video.thumb
     link2=link.split('=')
-    imgUrl = f"http://i.ytimg.com/vi/{link2[2]}/maxresdefault.jpg"
+    imgUrl = f"http://i.ytimg.com/vi/{link2[1]}/maxresdefault.jpg"
     st.write(imgUrl)
 #     st.write(value)
     with st.spinner(f'Searching video on youtube for {link}.....'):
