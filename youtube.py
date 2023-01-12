@@ -8,6 +8,7 @@ with st.form(key='youtube', clear_on_submit=True):
 if submit_text:
     try:
         yt = YouTube(link)
+        y=1
     except:
         
         st.warning('--Invalid link---')
@@ -21,8 +22,13 @@ if submit_text:
             sleep(1)
 
         st.experimental_rerun()
-   
+        
+        
+if y=1:
+    st.write("Title :{}".format(yt.title))
     
+       
+        
     
     
 
@@ -31,7 +37,7 @@ if submit_text:
 # link = input(" ")
 
 # To print title
-st.write("Title :{}".format(yt.title))
+
 # print("Title :", yt.title)
 # # To get number of views
 # print("Views :", yt.views)
