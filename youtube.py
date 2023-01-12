@@ -2,11 +2,10 @@ from pytube import YouTube
 import streamlit as st
 from time import sleep
 y=0
-def Download(link):
-    youtubeObject = YouTube(link)
-    youtubeObject = youtubeObject.streams.get_highest_resolution()
+def Download(yt):
+    yt = yt.streams.get_highest_resolution()
     try:
-        youtubeObject.download()
+        yt.download()
         st.success('Download started check your folder', icon="✅")
         
     except:
@@ -60,7 +59,7 @@ if y==1:
     "Do you want to download the video",
     ('No','Yes','rerun the app'))
     if download =='Yes':
-        download(link1)
+        download(yt)
         
     elif download =='rerun the app':
         st.experimental_rerun()
