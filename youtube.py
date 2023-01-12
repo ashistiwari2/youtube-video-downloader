@@ -1,7 +1,6 @@
 from pytube import YouTube
 import streamlit as st
 from time import sleep
-# import pafy 
 y=0
 
 with st.form(key='youtube', clear_on_submit=True):
@@ -28,12 +27,9 @@ if submit_text:
         
         
 if y==1:
-#     video = pafy.new(link)
-#     value = video.thumb
     link2=link.split('=')
     imgUrl = f"http://i.ytimg.com/vi/{link2[1]}/maxresdefault.jpg"
     st.write(imgUrl)
-#     st.write(value)
     with st.spinner(f'Searching video on youtube for {link}.....'):
         col1, col2 = st.columns(2)
         sleep(8)
@@ -41,33 +37,18 @@ if y==1:
             st.image(imgUrl, caption=yt.title, width=200, channels="RGB", output_format="auto")
             st.write("Title :{}".format(yt.title))
             st.write("Views :{}".format(yt.views))
-            st.write("Duration:{}".format(yt.length))
+            
         with col2:
+            st.write("Duration:{}".format(yt.length))
             st.write("Descrption:{}".format(yt.description))
             st.write("Rating:{}".format(yt.rating))
-    
-            
-    
-       
+    download=st.checkbox('Do you want to download the video')
+    rerun=st.checkbox('Do you want to re-run the app')
+    if download:
         
-    
-    
-
-
-
-# link = input(" ")
-
-# To print title
-
-# print("Title :", yt.title)
-# # To get number of views
-# print("Views :", yt.views)
-# # To get the length of video
-# print("Duration :", yt.length)
-# # To get description
-# print("Description :", yt.description)
-# # To get ratings
-# print("Ratings :", yt.rating)
-# stream = yt.streams.get_highest_resolution()
-# stream.download()
-# print("Download completed!!")
+        stream = yt.streams.get_highest_resolution()
+        stream.download()
+        st.success('Download started check your folder', icon="✅")
+    if rerun:
+         st.experimental_rerun()
+        
