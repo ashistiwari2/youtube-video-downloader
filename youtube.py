@@ -59,7 +59,7 @@ if y==1:
     "Do you want to download the video",
     ('No','Yes','rerun the app'))
     if download =='Yes':
-        download(yt)
+        Download(yt)
         
     elif download =='rerun the app':
         st.experimental_rerun()
