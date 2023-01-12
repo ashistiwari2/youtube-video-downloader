@@ -39,6 +39,7 @@ if submit_text:
         
 if y==1:
     link2=link.split('=')
+    st.write(yt.thumbnail_url)
     imgUrl = f"http://i.ytimg.com/vi/{link2[1]}/maxresdefault.jpg"
     st.write(imgUrl)
     with st.spinner(f'Searching video on youtube for {link}.....'):
