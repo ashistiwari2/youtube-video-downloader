@@ -64,7 +64,7 @@ if y==1:
         
     elif download =='rerun the app':
         st.experimental_rerun()
-    elif download=='N0':
+    elif download=='No':
         st.write("You have selected no")
 
         
