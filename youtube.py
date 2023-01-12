@@ -28,6 +28,7 @@ if submit_text:
         
 if y==1:
     imgUrl = f"https://img.youtube.com/vi/{link[link.find('watch?v='):]}/maxresdefault.jpg"
+    print(imageUrl)
     with st.spinner(f'Searching video on youtube for {link}.....'):
         col1, col2 = st.columns(2)
         sleep(8)
