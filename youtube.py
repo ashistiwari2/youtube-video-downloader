@@ -57,7 +57,7 @@ if y==1:
      
     download = st.radio(
     "Do you want to download the video",
-    ('No','Yes','rerun the app'))
+    ('Yes','No','rerun the app'))
     if download =='Yes':
         Download(yt)
         
