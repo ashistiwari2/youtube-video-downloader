@@ -24,7 +24,7 @@ if submit_text:
         st.experimental_rerun()
         
         
-if y=1:
+if y==1:
     st.write("Title :{}".format(yt.title))
     
        
