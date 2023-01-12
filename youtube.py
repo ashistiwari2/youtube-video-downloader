@@ -26,11 +26,18 @@ if submit_text:
         
         
 if y==1:
-    st.write("Title :{}".format(yt.title))
-    st.write("Views :{}".format(yt.views))
-    st.write("Duration:{}".format(yt.length))
-    st.write("Descrption:{}".format(yt.description))
-    st.write("Rating:{}".format(yt.rating))
+    with st.spinner(f'analysing and searching for {link}.....'):
+        col1, col2 = st.columns(2)
+        time.sleep(8)
+        with col1:
+            st.write("Title :{}".format(yt.title))
+            st.write("Views :{}".format(yt.views))
+            st.write("Duration:{}".format(yt.length))
+        with col2:
+            st.write("Descrption:{}".format(yt.description))
+            st.write("Rating:{}".format(yt.rating))
+    
+            
     
        
         
