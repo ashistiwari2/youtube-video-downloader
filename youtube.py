@@ -1,6 +1,7 @@
 from pytube import YouTube
 import streamlit as st
 from time import sleep
+y=0
 
 with st.form(key='youtube', clear_on_submit=True):
     link = st.text_area("Enter Youtube video link:", key='user')
