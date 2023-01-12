@@ -28,7 +28,7 @@ if submit_text:
 if y==1:
     with st.spinner(f'analysing and searching for {link}.....'):
         col1, col2 = st.columns(2)
-        time.sleep(8)
+        sleep(8)
         with col1:
             st.write("Title :{}".format(yt.title))
             st.write("Views :{}".format(yt.views))
