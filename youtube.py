@@ -4,11 +4,14 @@ from time import sleep
 y=0
 def Download(yt):
     DOWNLOAD_PATH = " C:/Users/" 
-    mp4files = yt.filter('mp4')  
-    yt.set_filename(yt.title)  
-    d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)  
+#     mp4files = yt.filter('mp4')  
+#     yt.set_filename(yt.title)  
+#     d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)  
+    stream = yt.streams.get_highest_resolution()
+# 
     try:
-        d_video.download(DOWNLOAD_PATH)
+        stream.download(DOWNLOAD_PATH)
+        #d_video.download(DOWNLOAD_PATH)
         st.success('Download started check your folder', icon="✅")
         
     except:
