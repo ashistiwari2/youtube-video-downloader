@@ -26,7 +26,7 @@ if submit_text:
         
         
 if y==1:
-    with st.spinner(f'analysing and searching for {link}.....'):
+    with st.spinner(f'Searching video on youtube for {link}.....'):
         col1, col2 = st.columns(2)
         sleep(8)
         with col1:
