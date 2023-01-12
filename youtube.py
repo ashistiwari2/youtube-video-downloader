@@ -4,7 +4,7 @@ from time import sleep
 y=0
 def Download(yt):
     DOWNLOAD_PATH = " C:/Users/" 
-    mp4files = yt.streams.filter('mp4')  
+    mp4files = yt.filter('mp4')  
     yt.set_filename(yt.title)  
     d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution)  
     try:
