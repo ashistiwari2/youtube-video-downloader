@@ -27,6 +27,10 @@ if submit_text:
         
 if y==1:
     st.write("Title :{}".format(yt.title))
+    st.write("Views :{}".format(yt.views))
+    st.write("Duration:{}".format(yt.length))
+    st.write("Descrption:{}".format(yt.description))
+    st.write("Rating:{}".format(yt.rating))
     
        
         
