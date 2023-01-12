@@ -42,13 +42,19 @@ if y==1:
             st.write("Duration:{}".format(yt.length))
             st.write("Descrption:{}".format(yt.description))
             st.write("Rating:{}".format(yt.rating))
-    download=st.checkbox('Do you want to download the video')
-    rerun=st.checkbox('Do you want to re-run the app')
-    if download:
-        
+     
+     
+    download = st.radio(
+    "Do you want to download the video",
+    ('Yes','No','rerun the app'))
+    if download =='Yes':
         stream = yt.streams.get_highest_resolution()
         stream.download()
         st.success('Download started check your folder', icon="✅")
-    if rerun:
-         st.experimental_rerun()
+    elif download =='rerun the app':
+        st.experimental_rerun()
+    else:
+        st.success("           ")
         
+
+
