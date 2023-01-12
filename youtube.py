@@ -1,7 +1,7 @@
 from pytube import YouTube
 import streamlit as st
 from time import sleep
-import pafy 
+# import pafy 
 y=0
 
 with st.form(key='youtube', clear_on_submit=True):
@@ -28,11 +28,11 @@ if submit_text:
         
         
 if y==1:
-    video = pafy.new(link)
-    value = video.thumb
-    imgUrl = f"https://img.youtube.com/vi/{link[link.find('watch?v='):]}/maxresdefault.jpg"
+#     video = pafy.new(link)
+#     value = video.thumb
+    imgUrl = f"http://i.ytimg.com/vi/{link[link.find('watch?v='):]}/maxresdefault.jpg"
     st.write(imgUrl)
-    st.write(value)
+#     st.write(value)
     with st.spinner(f'Searching video on youtube for {link}.....'):
         col1, col2 = st.columns(2)
         sleep(8)
