@@ -5,7 +5,8 @@ from time import sleep
 with st.form(key='youtube', clear_on_submit=True):
     link = st.text_area("Enter Youtube video link:", key='user')
     submit_text = st.form_submit_button(label='Submit')
-try:
+if submit_text:
+    try:
     yt = YouTube(link)
 except:
     st.warning('--Invalid link---')
@@ -19,6 +20,7 @@ except:
         sleep(1)
 
     st.experimental_rerun()
+
 
 
 # link = input(" ")
